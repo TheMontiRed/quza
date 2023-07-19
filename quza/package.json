@@ -18,6 +18,7 @@
     "@angular/platform-browser": "16.1.5",
     "@angular/platform-browser-dynamic": "16.1.5",
     "@angular/router": "16.1.5",
+    "git-filter-repo": "^0.0.30",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
