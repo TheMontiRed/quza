@@ -9,6 +9,7 @@
     "test": "ng test"
   },
   "private": true,
+  "homepage" : "https://themontired.github.io/quza",
   "dependencies": {
     "@angular/animations": "16.1.5",
     "@angular/common": "16.1.5",
