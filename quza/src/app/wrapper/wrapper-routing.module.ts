@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WrapperComponent } from './wrapper.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./wrapper/wrapper.module').then(m => m.WrapperModule)
-  },
+    component: WrapperComponent
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class WrapperRoutingModule { }
