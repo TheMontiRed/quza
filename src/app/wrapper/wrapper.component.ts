@@ -6,10 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./wrapper.component.css']
 })
 export class WrapperComponent {
-  constructor() { }
-
   ngOnInit(): void {
-    console.log("Hey");
+    // this.firebaseService.addMessageFunc();
+    console.log("wrapper");
   }
-  title = 'quza';
 }

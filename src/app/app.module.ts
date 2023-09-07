@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,24 +8,35 @@ import { environment } from '../environments/environment'
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { WrapperModule } from './wrapper/wrapper.module';
-import { WrapperComponent } from './wrapper/wrapper.component';
+import { HomeComponent } from './home/home.component';
+import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
+import { PwaService } from './utils/pwa.service';
+import { GlobalErrorHandler } from './utils/global-error-handler';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    WrapperModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFunctions(() => getFunctions()),
     provideFirestore(() => getFirestore()),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
-  providers: [],
+  providers: [
+    {provide: SwUpdate, useClass: PwaService},
+    {provide: ErrorHandler, useClass: GlobalErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,7 +11,8 @@ export class AppComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
-    this.firebaseService.addMessageFunc();
+    // this.firebaseService.addMessageFunc();
+    console.log("Hello");
   }
   title = 'quza';
 }
