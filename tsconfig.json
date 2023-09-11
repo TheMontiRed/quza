@@ -2,6 +2,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths":{
+      "path-browserify":["./node_modules/path-browserify"]
+    },
     "allowJs": true,
     "baseUrl": "src",
     "outDir": "./dist/out-tsc",

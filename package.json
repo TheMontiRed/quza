@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d build"
   },
   "private": true,
-  "homepage" : "https://themontired.github.io/quza/",
+  "homepage": "https://themontired.github.io/quza/",
   "dependencies": {
     "@angular/animations": "16.1.5",
     "@angular/common": "16.1.5",
@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "16.1.5",
     "@angular/router": "16.1.5",
     "@angular/service-worker": "16.1.5",
-    "firebase": "^7.0 || ^8.0",
+    "firebase": "^8.10.1",
     "git-filter-repo": "^0.0.30",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
