@@ -1,0 +1,5 @@
+<p>home works!</p>
+<button *ngIf="user" type="button" [routerLink]="['/wrapper']">Dashboard</button>
+<button *ngIf="!user" type="button" [routerLink]="['/login']">Login</button>
+<button *ngIf="!user" type="button" [routerLink]="['/signup']">Signup</button>
+<button *ngIf="user" type="button" [routerLink]="['/logout']">Logout</button>

@@ -16,9 +16,9 @@ export class FirebaseService {
 
   async addMessageFunc() {
     const addMessage = httpsCallable(this.functions, 'addmessage');
-    { limitedUseAppCheckTokens: true }
-    // connectFunctionsEmulator(this.functions, '127.0.0.1', 5002 );
-    // connectFirestoreEmulator(this.firestore, '127.0.0.1', 8083);
+    // { limitedUseAppCheckTokens: true }
+    connectFunctionsEmulator(this.functions, '127.0.0.1', 5002 );
+    connectFirestoreEmulator(this.firestore, '127.0.0.1', 8083);
     addMessage({first:"Ada", last:"Lovelace", born: 1815})
     .then((result) => {
         // Read result of the Cloud Function.

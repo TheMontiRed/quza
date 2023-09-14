@@ -8,11 +8,10 @@ import { FirebaseService } from './firebase/services.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor() { }
 
   ngOnInit(): void {
     // this.firebaseService.addMessageFunc();
-    console.log("Hello");
   }
   title = 'quza';
 }

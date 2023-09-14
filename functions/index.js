@@ -17,15 +17,13 @@ const db = getFirestore();
 
 // Take the text parameter passed to this HTTP endpoint and insert it into
 // Firestore under the path /messages/:documentId/original
-// "http://127.0.0.1:5001/quza-app/us-central1"
 exports.addmessage = onCall({
-  cors: [/firebase\.com$/, "http://localhost:4200", "https://themontired.github.io/quza"],
-  enforceAppCheck: true,
-  consumeAppCheckToken: true,
+  cors: [/firebase\.com$/, "http://localhost:4200", "http://127.0.0.1:5001/quza-app/us-central1"],
+  // enforceAppCheck: true,
+  // consumeAppCheckToken: true,
   // Consume the token after verification.
 },
-async (request, response) => {
-  response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'style-src-elem'; font-src 'self'; img-src 'self'; frame-src 'self'");
+async (request) => {
   const docRef = db.collection('message');
 
   return await docRef.add({

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-wrapper',
@@ -6,8 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./wrapper.component.css']
 })
 export class WrapperComponent {
+
+  displayName = "Esther Wango";
+
+  constructor(private authService: AuthService) {}
+
   ngOnInit(): void {
-    // this.firebaseService.addMessageFunc();
-    console.log("wrapper");
+    if(this.authService.user){
+      this.displayName = this.authService.user.displayName!;
+    };
   }
 }
