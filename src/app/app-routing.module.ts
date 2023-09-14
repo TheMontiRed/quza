@@ -19,10 +19,6 @@ const routes: Routes = [
    component: SignupComponent,
   },
   {
-    path: 'profile',
-   component: ProfileComponent,
-  },
-  {
     path: 'wrapper',
     loadChildren: () => import('./wrapper/wrapper.module').then(m => m.WrapperModule),
   },

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
-import { Router } from 'express';
 
 @Component({
   selector: 'app-wrapper',
@@ -9,9 +8,9 @@ import { Router } from 'express';
 })
 export class WrapperComponent {
 
-  displayName = "";
+  displayName = "Esther Wango";
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     if(this.authService.user){
